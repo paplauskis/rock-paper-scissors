@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++){
-        const playerSelection = prompt("Choose your weapon!", "Rock, Paper, Scissors").toLowerCase()
+       // const playerSelection = prompt("Choose your weapon!", "Rock, Paper, Scissors").toLowerCase()
         const computerSelection = getComputerChoice()
         playRound(playerSelection, computerSelection)
     }
@@ -57,5 +57,5 @@ function game() {
 //const computerSelection = getComputerChoice();
 //console.log(playRound(playerSelection, computerSelection));
 
-//console.log(game())
 console.log(game())
+//console.log(game())
