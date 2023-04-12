@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link href ="style.css" rel="stylesheet">
-    <script src="script.js">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script.js" defer>
         </script>
         
 </head>
@@ -15,10 +16,19 @@
         <h1> ROCK PAPER SCISSORS </h1>
     </header>
     <div class="score-board">
-        <h3 class="weapons">Choose your weapon</h3>
-        <h4 class="description">First to score 5 points wins</h4>
-        <h4 class="score">Player: 0 &nbsp &nbsp &nbspComputer: 0</h4>
-
+        <div class="weapons">
+            <h3>Choose your weapon</h3>
+        </div>
+        <div class="description">
+            <h4>First to score 5 points wins</h4>
+        </div>
+    <div class="scores">
+        <div class="player-score">
+            Player: 0
+        </div>
+        <div class="computer-score">
+            Computer: 0
+        </div>
     </div>
     <div class="buttons">
         <button class="rock">✊</button>
@@ -26,7 +36,7 @@
         <button class="scissors">✌️</button>
     </div>
     <div class="footer">
-        <p>Made by <a href="https://github.com/paplauskis" target="_blank">paplauskis 👾</a></p>
+        <p>Made by <a href="https://github.com/paplauskis" target="_blank" class="me">paplauskis 👾</a></p>
     </div>
 
 </body>

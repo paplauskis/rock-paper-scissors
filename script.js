@@ -19,43 +19,81 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice()
     if (computerSelection == playerSelection) {
-        console.log(`It is a tie! You both picked ${playerSelection}!`)
+        const weapons = document.querySelector('.weapons')
+        weapons.textContent = "It is a tie!"
+
+        const description = document.querySelector('.description');
+        description.textContent = `You both picked ${playerSelection}`;
     } else if (
         (playerSelection == "rock" && computerSelection == "scissors") 
         || (playerSelection == "paper" && computerSelection == "rock")
         || (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore++
-        console.log(`You win, ${playerSelection} beats ${computerSelection}!`)
+        const weapons = document.querySelector('.weapons')
+        weapons.textContent = `You win!`
+
+        const description = document.querySelector('.description');
+        description.textContent = `${playerSelection} beats ${computerSelection}`
+
+        const pScore = document.querySelector('.player-score')
+        pScore.innerText = `Player: ${playerScore}`
     } else {
         computerScore++
-        console.log(`You lose, ${computerSelection} beats ${playerSelection}!`)
-        
+        const weapons = document.querySelector('.weapons')
+        weapons.textContent = "Computer wins!"
+
+        const description = document.querySelector('.description');
+        description.textContent = `${computerSelection} beats ${playerSelection}`;
+
+        const cScore = document.querySelector('.computer-score')
+        cScore.innerText = `Computer: ${computerScore}`
     }
+    checkWinner(playerScore, computerScore);
 }
 
-function game() {
-    for (let i = 0; i < 5; i++){
-       // const playerSelection = prompt("Choose your weapon!", "Rock, Paper, Scissors").toLowerCase()
-        const computerSelection = getComputerChoice()
-        playRound(playerSelection, computerSelection)
+const btnRock = document.querySelector('.rock');
+const btnPaper = document.querySelector('.paper');
+const btnScissors = document.querySelector('.scissors');
+
+btnRock.addEventListener('click', () => playRound(playerSelection = "rock"));
+btnPaper.addEventListener('click', () => playRound(playerSelection = "paper"));
+btnScissors.addEventListener('click', () => playRound(playerSelection = "scissors"));
+
+
+
+function checkWinner(playerScore, computerScore) {
+    if (playerScore === 5) {
+        swal('You won!', 'Computer didn\'t stand a chance', {
+            button: "Damn right!"
+        });
+        const weapons = document.querySelector('.weapons')
+    weapons.textContent = "Choose your weapon"
+    
+    const description = document.querySelector('.description');
+        description.textContent = `First to score 5 points wins`;
+        resetScore()
     }
-    if (playerScore > computerScore){
-        return "You beat the computer!"
-    } else if (playerScore < computerScore) {
-        return "You lost to the computer"
-    } else {
-        return "This game is a tie!"
+    if (computerScore === 5) {
+        swal('Computer won!', 'Up your game!', {
+            buttons: [ 'Nah I\'m out',"I will!"]
+        })
+
+        const weapons = document.querySelector('.weapons')
+    weapons.textContent = "Choose your weapon"
+    
+    const description = document.querySelector('.description');
+        description.textContent = `First to score 5 points wins`;
+        resetScore()
     }
     
+}
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+    const cScore = document.querySelector('.computer-score')
+    cScore.innerText = `Computer: ${computerScore}`
+
+    const pScore = document.querySelector('.player-score')
+    pScore.innerText = `Player: ${playerScore}`
 
 }
-
-
-
-
-//const playerSelection = "rock";
-//const computerSelection = getComputerChoice();
-//console.log(playRound(playerSelection, computerSelection));
-
-console.log(game())
-//console.log(game())

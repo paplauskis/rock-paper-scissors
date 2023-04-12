@@ -2,6 +2,7 @@ html {
     background-color: #433E49;
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
+    width: 98.357%;
     
 }
 
@@ -25,14 +26,46 @@ body {
     
 }
 
-.score-board {
+
+.weapons {
+    font-size: 40px;
+    font-weight: 900;
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 70px;
-    margin-top: 70px;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.description {
+    font-size: 40px;
+    padding-top: 40px;
+    font-weight: 550;
+    text-align: center;
+    margin: 0;
 
 }
 
+.scores {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.player-score {
+    padding: 40px 65px;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.computer-score {
+    padding: 40px 50px;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.buttons {
+    padding-top: 40px;
+}
 .footer {
     position: fixed;
     left: 0;
@@ -49,13 +82,15 @@ a {
     font-weight: 500;
 }
 
+
+
 .rock, 
 .paper, 
 .scissors {
     border-radius: 50%;
     height: 150px;
     width: 150px;
-    margin: 20px;
+    margin:  0px 20px;
     font-size: 100px;
     background-color: transparent;
     border-color: #5e555d;
@@ -72,5 +107,36 @@ a {
 .rock:active,
 .paper:active,
 .scissors:active {
-    scale: 1.1 1.1;
+    scale: 1.2 1.2;
+}
+
+h3,
+h4 {
+    margin: 0;
+}
+
+.swal-modal {
+    background-color: #524150;
+    border: 10px solid #524150;
+  }
+
+.swal-text {
+    color: white;
+    font-size: 22px;
+}
+
+.swal-title {
+    color: white;
+    font-size: 36px;
+}
+
+.swal-button {
+    color: white;
+    background-color: royalblue;
+}
+
+.me:hover {
+    background-color: purple;
+    transition-delay: 0.2s;
+    opacity: 20%;
 }
